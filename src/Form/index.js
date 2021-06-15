@@ -1,36 +1,36 @@
+import { useState } from "react";
 import "./style.css";
 
-const Form = () => (
+const Form = ({ input }) => {
 
-    <form className="form">
-        <fieldset className="form__field">
-            <legend className="form__legend">Wybierz walutę</legend>
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+
+    };
+
+    return (
+        <form
+            onSubmit={onFormSubmit}
+            className="form">
             <p>
-                <label>
-                    <select className="form__select">
-                        <option value="EUR">EUR</option>
-                        <option value="PLN">PLN</option>
-                        <option value="USD">USD</option>
-                        <option value="">Wybierz walutę</option>
-                    </select><input className="form__input" type="number" min="1" step="any" value="1" required />
-                </label>
+                {input}
             </p>
             <p>
-                <label>
-                    <select className="form__select">
-                        <option value="PLN">PLN</option>
+                <label class="form__label">
+                    <span class="form__text">Waluta</span>
+                    <select className="form__field">
                         <option value="EUR">EUR</option>
                         <option value="USD">USD</option>
-                        <option value="">Wybierz walutę</option>
-                    </select><input className="form__input" type="number" min="1" step="any" disabled />
+                    </select>
                 </label>
             </p>
 
-        </fieldset>
+            <button className="form__button">Sprawdź</button>
 
-        <button className="form__button">Sprawdź</button>
+        </form>)
 
-    </form>
-);
+
+};
 
 export default Form;
