@@ -1,0 +1,27 @@
+.form__labelInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .form__labelInput {
+        width: 100%;
+        font-size: smaller;
+    }
+}
+
+.form__textInput {
+    width: 100%;
+    max-width: 200px;
+    display:inline-block;
+    margin-left: 5px;
+}
+
+.form__fieldInput {
+    padding: 10px;
+    text-align: left;
+    max-width: 350px;
+    width: 100%;
+    border-radius: 5px;
+}
