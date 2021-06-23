@@ -1,0 +1,11 @@
+body {
+    background-image: url("./background.png");
+    background-attachment: fixed;
+}
+
+@media (max-width: 767px) {
+    body {
+        background-position: center;
+        background-size: 400px;
+    }
+}

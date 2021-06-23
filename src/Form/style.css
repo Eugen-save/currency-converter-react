@@ -3,49 +3,5 @@
     max-width: 900px;
 }
 
-.form__label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-@media (max-width: 767px) {
-    .form__label {
-        width: 100%;
-        font-size: smaller;
-    }
-}
 
-.form__text {
-    width: 100%;
-    max-width: 200px;
-    display:inline-block;
-    margin-left: 5px;
-}
-
-.form__field {
-    padding: 10px;
-    text-align: left;
-    max-width: 350px;
-    width: 100%;
-    border-radius: 5px;
-}
-
-.form__button {
-    border: none;
-    padding: 10px;
-    box-shadow: 1px 1px 5px 0px hsl(208, 79%, 29%);
-    border-radius: 5px;
-    background-color: #0f4c81;
-    color: #fff;
-    transition: color 0.3s;
-    width: 100%;
-}
-
-.form__button:hover {
-    background-color: hsl(208, 79%, 38%);
-}
-
-.form__button:active {
-    background-color: hsl(208, 79%, 45%);
-}

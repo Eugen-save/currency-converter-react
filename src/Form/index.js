@@ -1,13 +1,6 @@
-import { useState } from "react";
 import "./style.css";
 
-const Form = ({ input }) => {
-
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-
-
-    };
+const Form = ({ input, button, body, onFormSubmit }) => {
 
     return (
         <form
@@ -17,20 +10,10 @@ const Form = ({ input }) => {
                 {input}
             </p>
             <p>
-                <label class="form__label">
-                    <span class="form__text">Waluta</span>
-                    <select className="form__field">
-                        <option value="EUR">EUR</option>
-                        <option value="USD">USD</option>
-                    </select>
-                </label>
+                {body}
             </p>
-
-            <button className="form__button">Sprawdź</button>
-
+            {button}
         </form>)
-
-
 };
 
 export default Form;
