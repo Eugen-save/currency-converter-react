@@ -5,7 +5,7 @@ const Result = ({setAmount, result}) => (
        <span></span>
        {result !== undefined && (
            <>
-           {result.sourceAmount.toFixed(2)} PLN =
+           {result.sourceAmount.toFixed(2)} PLN =&nbsp;
            <strong>{result.finalResult.toFixed(2)} {result.currency}</strong>
            </>
        )}
