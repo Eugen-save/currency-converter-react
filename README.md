@@ -10,7 +10,8 @@ In this project i created simple currency converter. Here you will find next exc
 - PLN/EUR
 - PLN/USD
 - PLN/CZK
-This converter uses average exchange rates
+This converter uses average exchange rates.
+At the top of converter you will find current date and time
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ### How to use
