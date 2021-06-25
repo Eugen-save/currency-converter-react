@@ -1,11 +1,9 @@
 import "./style.css";
 
 const Button = () => (
-    <button 
-    className="form__button"
-    >
+    <button className="form__button">
         Sprawdź
-        </button>
+    </button>
 );
 
 export default Button;
