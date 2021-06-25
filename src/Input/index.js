@@ -3,6 +3,7 @@ import "./style.css";
 const Input = ({ amount, setAmount }) => {
 
     return (
+        <p>
         <label className="form__labelInput">
             <span className="form__textInput">Kwota w PLN:</span>
             <input
@@ -15,6 +16,7 @@ const Input = ({ amount, setAmount }) => {
                 step="0.01"
             />
         </label>
+        </p>
     );
 
 };

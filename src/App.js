@@ -1,9 +1,6 @@
 import Form from "./Form";
 import Header from "./Header";
 import Container from "./Container";
-import Input from "./Input";
-import Select from "./Select";
-import Button from "./Button";
 import { useState, useEffect } from 'react';
 import currencies from "./currencies.js";
 import Result from "./Result";
@@ -62,22 +59,11 @@ setTime(time => time + 1000)
       />
       <Form
         onFormSubmit={onFormSubmit}
-        input={
-          <Input
-            amount={amount}
-            setAmount={setAmount}
-          />
-        }
-        body={
-          <Select
-            currencies={currencies}
-            currency={currency}
-            setCurrency={setCurrency}
-          />
-        }
-        button={
-          <Button />
-        }
+        currencies={currencies}
+        currency={currency}
+        setCurrency={setCurrency}
+        amount={amount}
+        setAmount={setAmount}
       />
       <Result
         result={result}

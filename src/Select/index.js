@@ -3,7 +3,8 @@ import "./style.css";
 const Select = ({ currencies, setCurrency }) => {
 
     return (
-        <label className="form__labelOption">
+       <p>
+       <label className="form__labelOption">
             <span className="form__textOption">Waluta</span>
             <select
                 onChange={({ target }) => setCurrency(target.value)}
@@ -18,6 +19,7 @@ const Select = ({ currencies, setCurrency }) => {
                 }
             </select>
         </label>
+        </p>
     )
 };
 

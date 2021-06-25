@@ -1,18 +1,24 @@
 import "./style.css";
+import Select from "../Select";
+import Input from "../Input";
+import Button from "../Button";
 
-const Form = ({ input, button, body, onFormSubmit }) => {
+const Form = ({ amount, setAmount, button, currency, currencies, setCurrency, onFormSubmit }) => {
 
     return (
         <form
             onSubmit={onFormSubmit}
             className="form">
-            <p>
-                {input}
-            </p>
-            <p>
-                {body}
-            </p>
-            {button}
+            <Input
+                amount={amount}
+                setAmount={setAmount}
+            />
+            <Select
+                currencies={currencies}
+                currency={currency}
+                setCurrency={setCurrency}
+            />
+            <Button />
         </form>)
 };
 
