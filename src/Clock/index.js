@@ -1,16 +1,13 @@
-import "./style.css";
-
-
-
+import { TimeDate } from "./styled";
 
 const Clock = ({ time, setTime, date }) => (
     <>
-        <div className="clock">Dzisiaj jest&nbsp;
+        <TimeDate>Dzisiaj jest&nbsp;
             {date.toLocaleString(
                 undefined,
                 {weekday: "long", day:"numeric", month: "long", year: "numeric", hour:"numeric", minute: "numeric", second:"numeric"}
             )}
-        </div>
+        </TimeDate>
     </>
 );
 

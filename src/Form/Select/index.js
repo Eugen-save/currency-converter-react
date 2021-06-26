@@ -1,14 +1,14 @@
-import "./style.css";
+import {Label, Text, FormSelect} from "../styled";
 
 const Select = ({ currencies, setCurrency }) => {
 
     return (
        <p>
-       <label className="form__labelOption">
-            <span className="form__textOption">Waluta</span>
-            <select
+       <Label>
+            <Text>Waluta</Text>
+            <FormSelect
                 onChange={({ target }) => setCurrency(target.value)}
-                className="form__fieldOption">
+                >
                 {currencies.map(currency => (
                     <option
                         key={currency.id}
@@ -17,8 +17,8 @@ const Select = ({ currencies, setCurrency }) => {
                     </option>
                 ))
                 }
-            </select>
-        </label>
+            </FormSelect>
+        </Label>
         </p>
     )
 };

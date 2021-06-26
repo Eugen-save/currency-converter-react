@@ -1,4 +1,3 @@
-import "./style.css";
 import Select from "./Select";
 import Input from "./Input";
 import Button from "./Button";
@@ -7,8 +6,7 @@ const Form = ({ amount, setAmount, button, currency, currencies, setCurrency, on
 
     return (
         <form
-            onSubmit={onFormSubmit}
-            className="form">
+            onSubmit={onFormSubmit}>
             <Input
                 amount={amount}
                 setAmount={setAmount}

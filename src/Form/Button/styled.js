@@ -1,4 +1,6 @@
-.form__button {
+import styled from "styled-components";
+
+export const FormButton = styled.button`
     border: none;
     padding: 10px;
     box-shadow: 1px 1px 5px 0px hsl(208, 79%, 29%);
@@ -7,12 +9,12 @@
     color: #fff;
     transition: color 0.3s;
     width: 100%;
-}
 
-.form__button:hover {
+&:hover {
     background-color: hsl(208, 79%, 38%);
 }
 
-.form__button:active {
+&:active {
     background-color: hsl(208, 79%, 45%);
 }
+`;

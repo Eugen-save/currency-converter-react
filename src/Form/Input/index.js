@@ -1,21 +1,20 @@
-import "./style.css";
+import {Label, Text, FormInput} from "../styled";
 
 const Input = ({ amount, setAmount }) => {
 
     return (
         <p>
-        <label className="form__labelInput">
-            <span className="form__textInput">Kwota w PLN:</span>
-            <input
+        <Label>
+            <Text>Kwota w PLN:</Text>
+            <FormInput
                 value={amount}
                 onChange={({ target }) => setAmount(target.value)}
                 placeholder="Wpisz kwotę w PLN"
-                className="form__fieldInput"
                 type="number"
                 required
                 step="0.01"
             />
-        </label>
+        </Label>
         </p>
     );
 
