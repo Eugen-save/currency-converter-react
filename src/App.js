@@ -1,7 +1,7 @@
 import Form from "./Form";
 import Header from "./Header";
 import Container from "./Container";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import currencies from "./currencies.js";
 import Result from "./Result";
 import Footer from "./Footer";
@@ -13,19 +13,6 @@ function App() {
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState();
   const [currency, setCurrency] = useState(currencies[0].id);
-
-  const date = new Date();
-  const [time, setTime] = useState(date.getTime());
-
-  useEffect(() => {
-    const intervalID = setInterval(() => {
-      setTime(time => time + 1000)
-    }, 1000);
-
-    return () => {
-      clearInterval(intervalID);
-    };
-  }, []);
 
   const calculateResult = (currency, amount) => {
     const rate = currencies.find(({ id }) => id === currency).rate;
@@ -54,9 +41,6 @@ function App() {
           title="Przelicznik walut"
         />
         <Clock
-          time={time}
-          setTime={setTime}
-          date={date}
         />
         <Form
           onFormSubmit={onFormSubmit}
