@@ -1,23 +1,71 @@
 import Select from "./Select";
 import Input from "./Input";
 import Button from "./Button";
+import Result from "../Result";
+import { useState } from "react";
+import { useGetCurrencies } from "./useGetCurrencies";
 
-const Form = ({ amount, setAmount, button, currency, currencies, setCurrency, onFormSubmit }) => {
+const Form = () => {
 
-    return (
-        <form
-            onSubmit={onFormSubmit}>
-            <Input
-                amount={amount}
-                setAmount={setAmount}
-            />
-            <Select
-                currencies={currencies}
-                currency={currency}
-                setCurrency={setCurrency}
-            />
-            <Button />
-        </form>)
+    const [amount, setAmount] = useState("");
+    const [result, setResult] = useState();
+    const [targetCurrency, setTargetCurrency] = useState("EUR");
+
+    const ratesData = useGetCurrencies();
+    const status = ratesData.status;
+
+    const calculateResult = (targetCurrency, amount) => {
+        const rate = ratesData.rates[targetCurrency];
+
+        setResult({
+            sourceAmount: +amount,
+            finalResult: amount * rate,
+            targetCurrency,
+        });
+    };
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+        calculateResult(targetCurrency, amount);
+        if (amount !== "") {
+            amount.trim();
+            setAmount("");
+        }
+    };
+
+
+    switch (status) {
+        case "loading":
+            return <p>Strona się laduje</p>;
+        case "error":
+            return <p>Coś poszło nie tak</p>
+        case "success":
+            return (
+                <>
+                    <form
+                        onSubmit={onFormSubmit}>
+                        <Input
+                            amount={amount}
+                            setAmount={setAmount}
+                        />
+                        <Select
+                            targetCurrency={targetCurrency}
+                            setTargetCurrency={setTargetCurrency}
+                            rates={ratesData.rates}
+                        />
+                        <Button />
+                    </form>
+                    <Result
+                        result={result}
+                        setResult={setResult}
+                        amount={amount}
+                    />
+                </>
+
+            );
+        default:
+            return "";
+    };
 };
 
 export default Form;
