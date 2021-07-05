@@ -1,24 +1,25 @@
-import {Label, Text, FormSelect} from "../styled";
+import { Label, Text, FormSelect } from "../styled";
 
-const Select = ({ currencies, setCurrency }) => {
+const Select = ({rates, setTargetCurrency, targetCurrency}) => {
 
     return (
-       <p>
-       <Label>
-            <Text>Waluta</Text>
-            <FormSelect
-                onChange={({ target }) => setCurrency(target.value)}
+        <p>
+            <Label>
+                <Text>Waluta</Text>
+                <FormSelect
+                    onChange={({ target }) => setTargetCurrency(target.value)}
+                    value={targetCurrency}
                 >
-                {currencies.map(currency => (
-                    <option
-                        key={currency.id}
-                        value={currency.id}>
-                        {currency.name}
-                    </option>
-                ))
-                }
-            </FormSelect>
-        </Label>
+                    {Object.keys(rates).map((currency) => (
+                        <option
+                            key={currency}
+                            value={currency}>
+                            {currency}
+                        </option>
+                    ))
+                    }
+                </ FormSelect>
+            </Label>
         </p>
     )
 };
