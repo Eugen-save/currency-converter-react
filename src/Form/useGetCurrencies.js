@@ -27,7 +27,7 @@ export const useGetCurrencies = () => {
                 };
             };
 
-            setTimeout(getAPI, 1_000);
+            setTimeout(getAPI, 3_000);
 
     }, []);
 
