@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TextFooter = styled.footer`
-    font-size: smaller;
+    max-width: 100%;
     width: 100%;
     text-align: center;
 `;

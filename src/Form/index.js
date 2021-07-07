@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useGetCurrencies } from "./useGetCurrencies";
 import Loading from "./Message/Loading";
 import Error from "./Message/Error";
+import Footer from "./Footer";
 
 const Form = () => {
 
@@ -15,6 +16,7 @@ const Form = () => {
 
     const ratesData = useGetCurrencies();
     const status = ratesData.status;
+    const date = ratesData.date;
 
     const calculateResult = (targetCurrency, amount) => {
         const rate = ratesData.rates[targetCurrency];
@@ -62,6 +64,9 @@ const Form = () => {
                         result={result}
                         setResult={setResult}
                         amount={amount}
+                    />
+                    <Footer 
+                    date={date}
                     />
                 </>
 

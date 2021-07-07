@@ -1,7 +1,6 @@
 import Form from "./Form";
 import Header from "./Header";
 import Container from "./Container";
-import Footer from "./Footer";
 import Clock from "./Clock";
 import { GlobalStyle } from "./styled";
 
@@ -16,8 +15,6 @@ function App() {
         />
         <Clock />
         <Form />
-
-        <Footer />
       </Container>
     </>
   );
