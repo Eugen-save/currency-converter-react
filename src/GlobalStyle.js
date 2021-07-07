@@ -15,14 +15,15 @@ body{
      font-family: 'Lato', sans-serif;
      font-weight: 400;
      font-size: 24px;
-     color: #0f4c81;
+     color: ${({theme}) => theme.colors.chatamsBlue};
      max-width: 900px;
      margin: 0 auto;
      padding: 0 20px;
      background-image: url("${background}");
      background-attachment: fixed;
+     margin-top: 50px;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
         background-position: center;
         background-size: 400px;
     }
