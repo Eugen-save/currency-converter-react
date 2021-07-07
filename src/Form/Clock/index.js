@@ -4,22 +4,22 @@ import { useCurrentDate } from "./useCurrentDate"
 const Clock = () => {
     const date = useCurrentDate();
 
-    const formatDate = date.toLocaleString(
+    const formattedDate = date.toLocaleString(
         undefined, {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric"
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric"
     }
     );
 
     return (
         <>
             <TimeDate>Dzisiaj jest&nbsp;
-               {formatDate}
+               {formattedDate}
             </TimeDate>
         </>
     );

@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.main`
+    background-color: ${({ theme }) => theme.colors.white};
+`;
+
 export const Label = styled.label`
     display: flex;
     justify-content: center;
     align-items: center;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         width: 100%;
         font-size: smaller;
 }

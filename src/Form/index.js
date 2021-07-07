@@ -1,12 +1,15 @@
 import Select from "./Select";
 import Input from "./Input";
 import Button from "./Button";
-import Result from "../Result";
-import { useState } from "react";
-import { useGetCurrencies } from "./useGetCurrencies";
+import Result from "./Result";
+import Clock from "./Clock";
+import Header from "./Header";
 import Loading from "./Message/Loading";
 import Error from "./Message/Error";
 import Footer from "./Footer";
+import { useState } from "react";
+import { useGetCurrencies } from "./useGetCurrencies";
+import { Wrapper } from "./styled";
 
 const Form = () => {
 
@@ -36,40 +39,43 @@ const Form = () => {
             setAmount("");
         }
     };
+
     switch (status) {
         case "loading":
-            return (
-                <Loading />);
+            return (<Loading />);
         case "error":
-            return (
-                <Error />
-            )
+            return (<Error />);
         case "success":
             return (
                 <>
-                    <form
-                        onSubmit={onFormSubmit}>
-                        <Input
+                    <Wrapper>
+                        <Header
+                            title="Przelicznik walut"
+                        />
+                        <Clock />
+                        <form
+                            onSubmit={onFormSubmit}>
+                            <Input
+                                amount={amount}
+                                setAmount={setAmount}
+                            />
+                            <Select
+                                targetCurrency={targetCurrency}
+                                setTargetCurrency={setTargetCurrency}
+                                rates={ratesData.rates}
+                            />
+                            <Button />
+                        </form>
+                        <Result
+                            result={result}
+                            setResult={setResult}
                             amount={amount}
-                            setAmount={setAmount}
                         />
-                        <Select
-                            targetCurrency={targetCurrency}
-                            setTargetCurrency={setTargetCurrency}
-                            rates={ratesData.rates}
+                        <Footer
+                            date={date}
                         />
-                        <Button />
-                    </form>
-                    <Result
-                        result={result}
-                        setResult={setResult}
-                        amount={amount}
-                    />
-                    <Footer 
-                    date={date}
-                    />
+                    </Wrapper>
                 </>
-
             );
         default:
             return "";
