@@ -5,12 +5,13 @@ https://eugen-save.github.io/currency-converter-react/
 - ES6+ features
 - BEM
 - React
+- API
 ## Description
-In this project i created simple currency converter. Here you will find next exchange rates
+In this project i created simple currency converter. Here you can convert PLN to any available currency, for example:
 - PLN/EUR
 - PLN/USD
 - PLN/CZK
-This converter uses average exchange rates.
+This converter uses rates from European Central Bank
 At the top of converter you will find current date and time
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
